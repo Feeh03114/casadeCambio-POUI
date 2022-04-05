@@ -7,7 +7,8 @@
     "start": "node server.js",
     "build": "ng build --configuration production --output-hashing=all",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "heroku-postbuild": "ng build --configuration production --output-hashing=all"
   },
   "engines": {
     "node": "16.13.0",
