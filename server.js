@@ -13,6 +13,4 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(process.cwd(), "/dist/casa-cambio/index.html"));
 });
 
-app.listen(PORT, () => {
-  console.log(`App running on ${PORT}`);
-});
+app.listen(process.env.PORT || 4200);
