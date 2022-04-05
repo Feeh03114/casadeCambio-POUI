@@ -1,6 +1,19 @@
 <div>
   <po-toolbar p-title="Casa de Cambio"></po-toolbar>
   <po-page-default p-title="Casa de Cambio">
-    <p> AppName page </p>
+    <div class="po-row">
+      <po-container class="po-lg-12 po-mt-2">
+        <div class="po-font-text-bold">
+          {{tebela}}
+        </div>
+
+        <po-table p-container="shadow" [p-items]="itens" [p-columns]="columns"> </po-table>
+      </po-container>
+    </div>
+    <div class="po-lg-12 po-mt-2">
+      <po-chart class="po-md-12 po-mt-2 " [p-title]="title" [p-options]="options" [p-categories]="categories"
+        [p-series]="serie" [p-type]="ExportsType">
+      </po-chart>
+    </div>
   </po-page-default>
 </div>
