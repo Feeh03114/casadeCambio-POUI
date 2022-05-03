@@ -2,6 +2,12 @@
   <po-toolbar p-title="Casa de Cambio"></po-toolbar>
   <po-page-default p-title="Casa de Cambio">
     <div class="po-row">
+      <div class="po-md-12">
+        <po-select name="select" p-label="Seleciona uma moeda" [p-options]="moedasSelect">
+        </po-select>
+      </div>
+    </div>
+    <div class="po-row">
       <po-container class="po-lg-12 po-mt-2">
         <div class="po-font-text-bold">
           {{tebela}}

@@ -13,6 +13,19 @@ export class AppComponent implements OnInit {
   moedas = ['USD', 'CAD', 'EUR', 'GBP', 'JPY', 'ARS', 'CNY', 'BTC', 'BOB', 'CHF'];
   interval:any; 
   dates:any[] = [];
+
+  moedasSelect:any[]= [
+    {label: 'USD', value: 'USD'}, 
+    {label: 'CAD', value: 'CAD'}, 
+    {label: 'EUR', value: 'EUR'}, 
+    {label: 'GBP', value: 'GBP'}, 
+    {label: 'JPY', value: 'JPY'}, 
+    {label: 'ARS', value: 'ARS'}, 
+    {label: 'CNY', value: 'CNY'}, 
+    {label: 'BTC', value: 'BTC'}, 
+    {label: 'BOB', value: 'BOB'}, 
+    {label: 'CHF', value: 'CHF'}
+  ];
   
   //table
   columns: Array<PoTableColumn>= [
@@ -108,7 +121,7 @@ export class AppComponent implements OnInit {
     this.title2 = 'Fluxo de câmbio Venda - ' + new Date().toLocaleDateString();
     const result: { label: string; data: any[]; }[] = [];
     const cate: string[] = [];
-    this.moedas.map((e)=>{
+    this.moedas.filter(x=>x !== 'BTC').map((e)=>{
       this.http.get(`https://economia.awesomeapi.com.br/json/daily/${e}/7`)
       .subscribe((data:any)=>{
         data.map((res:any)=>{
