@@ -2,28 +2,6 @@
   <po-toolbar p-title="Casa de Cambio"></po-toolbar>
   <po-page-default p-title="Casa de Cambio">
     <div class="po-row">
-      <div class="po-md-12" layout-align="center center">
-        <form #f="ngForm">
-          <div class="po-row">
-            <div class="po-md-3">
-              <po-select name="moeda" [ngModel]="moeda" (ngModelChange)="moeda = $event" p-label="Seleciona uma moeda"
-                [p-options]="moedasSelect" (p-change)="onChanceSelect">
-              </po-select>
-            </div>
-            <div class="po-md-3">
-              <po-input name="input"
-                onkeypress="return event.charCode >= 48 && event.charCode == 46 && event.charCode == 44 && event.charCode <= 57"
-                p-label="Valor a converter" [ngModel]="RValor" (ngModelChange)="RValor = $event" p-clean></po-input>
-            </div>
-            <div class="po-md-3">
-              <po-input name="input" p-label="Valor a convertido" p-readonly p-clean>
-              </po-input>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="po-row">
       <po-container class="po-lg-12 po-mt-2">
         <div class="po-font-text-bold">
           {{tebela}}
@@ -31,16 +9,6 @@
 
         <po-table p-container="shadow" [p-items]="itens" [p-columns]="columns"> </po-table>
       </po-container>
-    </div>
-    <div class="po-lg-12 po-mt-2">
-      <po-chart class="po-md-12 po-mt-2 " [p-title]="title" [p-options]="options" [p-categories]="categories"
-        [p-series]="serie" [p-type]="ExportsType">
-      </po-chart>
-    </div>
-    <div class="po-lg-12 po-mt-2">
-      <po-chart class="po-md-12 po-mt-2 " [p-title]="title2" [p-options]="options" [p-categories]="categories"
-        [p-series]="serie2" [p-type]="ExportsType">
-      </po-chart>
     </div>
   </po-page-default>
 </div>
