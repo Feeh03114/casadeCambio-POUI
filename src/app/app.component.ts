@@ -9,11 +9,13 @@ import { PoChartOptions, PoChartSerie, PoChartType, PoTableColumn } from '@po-ui
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
   moedas = ['USD', 'CAD', 'EUR', 'GBP', 'JPY', 'ARS', 'CNY', 'BTC', 'BOB', 'CHF'];
+  loading:boolean = false;
+  desabledButton:boolean = false;
+  moeda:string | undefined;
+  RValor:string | undefined;
   interval:any; 
   dates:any[] = [];
-
   moedasSelect:any[]= [
     {label: 'USD', value: 'USD'}, 
     {label: 'CAD', value: 'CAD'}, 
@@ -212,10 +214,19 @@ export class AppComponent implements OnInit {
         }
         
         this.categories = cate;
-        console.log(this.serie)
+        //console.log(this.serie)
       })
     })
     //this.intervalLoandingAPI();
+  }
+
+  onChanceSelect(){
+    console.log('moeda',this.moeda)
+  }
+
+  onConvert(){
+    console.log('moeda',this.moeda)
+    console.log('RValor',this.RValor)
   }
 
 }
